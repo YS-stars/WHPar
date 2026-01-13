@@ -146,7 +146,7 @@ def phash():
             # print(str)
             str = ''
             
-#将API句向量和参数句向量结合
+#将API向量和参数向量结合
 def api_C():
     rows = []
     with open('/TF_api.csv', 'r', encoding='gb18030') as f:
@@ -172,3 +172,4 @@ if __name__ == "__main__":
     # phash()
     #api_c()
     print("end")
+
