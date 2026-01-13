@@ -1,4 +1,5 @@
 # WHPar
+All packages required for reference are specified at the beginning of the file; please install them independently. The compatible Python version is 3.7.
 
 Step 1: Run the test_mal() and test_beg() functions in the main.py file to obtain the API sequence and the API parameter sequence, respectively.
 
