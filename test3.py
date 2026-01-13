@@ -145,8 +145,30 @@ def phash():
             print("第{}个样本写入!".format(x))
             # print(str)
             str = ''
+            
+#将API句向量和参数句向量结合
+def api_C():
+    rows = []
+    with open('/TF_api.csv', 'r', encoding='gb18030') as f:
+        reader = csv.reader(f)
+        rows1 = [row for row in reader]
+    with open('/TF_api_c.csv', 'r', encoding='gb18030') as f:
+        reader = csv.reader(f)
+        rows2 = [row for row in reader]
+    with open('./doc_TF.csv', 'a', newline='') as file:
+        writer = csv.writer(file)
+        # 恶意标签为1，良性标签为0
+        for i in range(2000):
+            rows = rows1[i][1] + rows2[i][1]
+            # 融合的向量根据良性向量数量划分，前i个向量为良性向量,从0开始
+            if i < 1000:
+               writer.writerow(['0', rows])
+            else:
+                writer.writerow(['1', rows])
+            print("第{}个向量写入!".format(i))
 
 if __name__ == "__main__":
     # doc_vec()
     # phash()
+    #api_c()
     print("end")
